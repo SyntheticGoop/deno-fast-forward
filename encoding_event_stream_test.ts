@@ -18,7 +18,8 @@ import {
 import { EncodingProgressEvent } from "./events.ts";
 import { FFmpeg } from "./ffmpeg.ts";
 
-const rootDir: string = dirname(fromFileUrl(import.meta.url));
+//const rootDir: string = dirname(fromFileUrl(import.meta.url));
+const rootDir: string = new URL(".", import.meta.url).pathname;
 const inputPath = `${rootDir}/fixtures/sample.mp4`;
 
 Deno.test({
